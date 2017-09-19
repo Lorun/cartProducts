@@ -15,9 +15,9 @@ const ACTION_HANDLERS = {
             list
         };
     },
-    [t.SELECT_SKU]: (state, action) => ({
+    [t.PRODUCTS_FETCH_SUCCESS]: (state, action) => ({
         ...state,
-        lastId: state.lastId + 1
+        list: action.items
     })
 };
 
