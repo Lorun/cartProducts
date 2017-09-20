@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { CartList } from './cart';
+import { Cart } from './cart';
 //import Header from './common/Header';
 
 import './App.css';
@@ -13,9 +13,14 @@ class App extends Component {
             <div className="common">
                 {/*<Header />*/}
 
-                <h1>Front-End Developer</h1>
+                <div className="section text-center">
+                    <h1>Front-End Developer</h1>
+                    <p>Adyax’s core values take top priority: we care for our client, and we care for our people. Staff and clients work in partnership with consistent,  transparent communication.</p>
+                </div>
 
-                <CartList/>
+                <div className="section section--yellow">
+                    <Cart/>
+                </div>
             </div>
         );
     };

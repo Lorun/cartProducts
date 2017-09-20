@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './cart-product.css';
+
 const calculateCheckedQuantity = (currentValue, available, isIncrease) => {
     return isIncrease
         ? +currentValue >= +available ? +available : +currentValue + 1
@@ -19,16 +21,16 @@ export const CartProduct = ({ item, actions }) => {
 
     return (
         <div className="cart-product">
-            <button onClick={() => actions.remove(id)}>Delete</button>
+            <button onClick={() => actions.deleteCartProduct(id)}>Delete</button>
 
             <figure className="product-image" style={styleImage} > </figure>
 
             <div className="product-body">
                 <div className="product-title">{title}</div>
                 <p>{subtitle}</p>
-                <select name="sku">
+                <select name="sku" onChange={(e) => actions.onSelectSku(e, id)}>
                     <option>SKU</option>
-                    {skuList.map((sku) => (<option key={sku.id} value={sku.id} disabled={+sku.id === currentSku}>{sku.title}: {sku.price} €</option>))}
+                    {skuList.map((sku) => (<option key={sku.id} value={sku.id} disabled={sku.id === currentSku}>{sku.title}: {sku.price} €</option>))}
                 </select>
             </div>
 
@@ -38,7 +40,7 @@ export const CartProduct = ({ item, actions }) => {
                 <button className="btn btn--sm" onClick={() => actions.setQuantity(id, increasedQuantity)} disabled={isIncreaseDisabled}>+</button>
             </div>
 
-            <div className="product-price">{+price * selectedQuantity}.00 €</div>
+            <div className="product-price">{price * selectedQuantity}.00 €</div>
         </div>
     );
 };

@@ -27,7 +27,7 @@ html {
 body {
     margin: 0;
     font-family: "Open Sans", sans-serif;
-    color: #444;
+    color: #191919;
 }
 
 /**
@@ -461,6 +461,27 @@ template {
     padding-bottom: 3em;
 }
 
+.section {
+    padding: 70px 20px;
+    position: relative;
+}
+.section--yellow {
+    padding: 0 0 70px;
+}
+.section--yellow:before {
+    content: '';
+    position: absolute;
+    top: 147px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fedd23;
+}
+
+.text-center {
+    text-align: center;
+}
+
 
 .btn {
     box-sizing: border-box;
@@ -484,14 +505,4 @@ template {
     color: #ffffff;
     font-weight: normal;
     border-radius: 0.25em;
-}
-.btn--delete {
-    background-color: #e0494a;
-    color: #fff;
-}
-
-.btn--small {
-    height: 1.875em;
-    line-height: 1.875em;
-    padding: 0 0.75em;
 }

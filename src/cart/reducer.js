@@ -6,25 +6,27 @@ const ACTION_HANDLERS = {
         ...state,
         list: List(state.list).map(item => item.id === action.id ? {...item, selectedQuantity: action.quantity } : item),
     }),
-    [t.REMOVE]: (state, action) => {
-        let list = {...state.list};
-        delete list[action.id];
-
-        return {
-            ...state,
-            list
-        };
-    },
-    [t.PRODUCTS_FETCH_SUCCESS]: (state, action) => ({
+    [t.REMOVE]: (state, action) => ({
         ...state,
-        list: action.items
+        list: List(state.list).filter(item => item.id !== action.id)
+    }),
+    [t.PRODUCTS_FETCH_SUCCESS]: (state, action) => ({
+        list: action.items,
+        isFetching: false
+    }),
+    [t.SELECT_SKU]: (state, action) => ({
+        ...state,
+        list: List(state.list).map(item => item.id === action.id ? {...item, currentSku: action.currentSku } : item),
+    }),
+    [t.TOGGLE_FATCHING]: (state, action) => ({
+        ...state,
+        isFetching: !state.isFetching
     })
 };
 
 const initialState = {
     list: [],
-    lastId: 1000,
-    filter: 0
+    isFetching: true
 };
 
 export default (state = initialState, action) => {
