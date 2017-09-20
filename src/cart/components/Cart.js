@@ -17,12 +17,12 @@ class CartList extends Component {
     render() {
         const { products, totalPrice, setQuantity, deleteCartProduct, onSelectSku, isFetching } = this.props;
 
-        if (isFetching) return (<div>Loading...</div>);
+        // if (isFetching) return (<div>Loading...</div>);
 
         return (
             <div className="cart">
                 {isFetching
-                    ? (<div>Loading...</div>)
+                    ? (<div className="cart-loading">Loading...</div>)
                     : products.map(item => (
                         <CartProduct
                             key={item.id}

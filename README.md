@@ -1,10 +1,8 @@
-# Spending App #
-
-The simple test app is created utilizing React and Redux libraries.
+# Cart App #
 
 ## Installation ##
 Clone this repository:
-```git clone https://github.com/Lorun/spendMoney.git```
+```git clone https://github.com/Lorun/cartProducts.git```
 
 Run ```npm install``` command to install packages.
 

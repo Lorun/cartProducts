@@ -40,6 +40,8 @@ export function toggleFetching() {
 export function onSelectSku(event, id) {
     return (dispatch) => {
         const currentSku = event.target.value;
+        if (!currentSku) return false;
+
         dispatch({
             type: t.SELECT_SKU,
             id,

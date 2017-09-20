@@ -26,7 +26,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Work Sans", sans-serif;
     color: #191919;
 }
 
@@ -457,9 +457,7 @@ template {
     box-sizing: border-box;
 }
 
-.common {
-    padding-bottom: 3em;
-}
+.common {  }
 
 .section {
     padding: 70px 20px;
@@ -477,7 +475,34 @@ template {
     bottom: 0;
     background-color: #fedd23;
 }
+.section--main {
+    max-width: 810px;
+    margin: 0 auto;
+}
+.section--main h1 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    margin-top: 0;
+    font-weight: 700;
+}
+.section--main p {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.79;
+}
 
 .text-center {
     text-align: center;
+}
+
+.color--yellow {
+    color: #fedd23;
+}
+
+
+.symbol-dot {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 0.45em;
+    margin-bottom: 0.1em;
 }

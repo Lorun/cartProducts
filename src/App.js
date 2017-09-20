@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Cart } from './cart';
-//import Header from './common/Header';
+import Header from './common/Header';
 
 import './App.css';
 
@@ -11,10 +11,10 @@ class App extends Component {
     render() {
         return (
             <div className="common">
-                {/*<Header />*/}
+                <Header />
 
-                <div className="section text-center">
-                    <h1>Front-End Developer</h1>
+                <div className="section section--main text-center">
+                    <h1>Front-End Developer<span className="color--yellow symbol-dot">■</span></h1>
                     <p>Adyax’s core values take top priority: we care for our client, and we care for our people. Staff and clients work in partnership with consistent,  transparent communication.</p>
                 </div>
 

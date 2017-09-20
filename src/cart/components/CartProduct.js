@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './cart-product.css';
-// import '../images/icon-trash.svg';
 
 const calculateCheckedQuantity = (currentValue, available, isIncrease) => {
     return isIncrease
@@ -12,7 +11,7 @@ const calculateCheckedQuantity = (currentValue, available, isIncrease) => {
 // component part
 export const CartProduct = ({ item, actions }) => {
     const { id, selectedQuantity, image, title, subtitle, price, quantity, currentSku, sku: skuList } = item;
-    const styleImage = {backgroundImage: 'url(' + image + ')'};
+    const styleImage = {backgroundImage: 'url(http://lorempixel.com/output/' + image + ')'};
 
     const increasedQuantity = calculateCheckedQuantity(selectedQuantity, quantity, true);
     const isIncreaseDisabled = +selectedQuantity >= +quantity;
@@ -24,21 +23,31 @@ export const CartProduct = ({ item, actions }) => {
         <div className="cart-product">
             <button onClick={() => actions.deleteCartProduct(id)} className="cart-deleteBtn" title="Delete">&nbsp;</button>
 
-            <figure className="product-image" style={styleImage} > </figure>
+            <figure className="product-imageHolder">
+                <span className="product-image" style={styleImage}> </span>
+            </figure>
 
             <div className="product-body">
                 <div className="product-title">{title}</div>
-                <p>{subtitle}</p>
-                <select name="sku" onChange={(e) => actions.onSelectSku(e, id)}>
-                    <option>SKU</option>
-                    {skuList.map((sku) => (<option key={sku.id} value={sku.id} disabled={sku.id === currentSku}>{sku.title}: {sku.price} €</option>))}
+                <p className="product-subtitle">{subtitle}</p>
+                <select name="sku" onChange={(e) => actions.onSelectSku(e, id)} className="product-select">
+                    <option value={currentSku}>SKU</option>
+                    {skuList.map((sku) => (
+                        <option key={sku.id} value={sku.id} disabled={sku.id === currentSku}>{sku.title}</option>
+                    ))}
                 </select>
             </div>
 
             <div className="product-quantity">
-                <button className="btn btn--quantity" onClick={() => actions.setQuantity(id, decreasedQuantity)} disabled={isDecreaseDisabled}>-</button>
+                <button className="btn btn--quantity btn--decrease"
+                        onClick={() => actions.setQuantity(id, decreasedQuantity)}
+                        disabled={isDecreaseDisabled}>-
+                </button>
                 <span className="product-quantityValue">{selectedQuantity}</span>
-                <button className="btn btn--quantity" onClick={() => actions.setQuantity(id, increasedQuantity)} disabled={isIncreaseDisabled}>+</button>
+                <button className="btn btn--quantity btn--increase"
+                        onClick={() => actions.setQuantity(id, increasedQuantity)}
+                        disabled={isIncreaseDisabled}>+
+                </button>
             </div>
 
             <div className="product-price">{price * selectedQuantity}.00 €</div>

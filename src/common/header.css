@@ -1,0 +1,15 @@
+
+.header {
+	padding: 50px 20px 0;
+	text-align: center;
+}
+
+.header-logo {
+	display: block;
+	margin: 0 auto 19px;
+}
+
+.header-slogan {
+	width: 238px;
+	height: 10px;
+}
