@@ -6,3 +6,12 @@
 	background-color: #fff;
 	box-shadow: 0 25px 54px 0 rgba(0, 0, 0, 0.11);
 }
+
+.cart-totalPrice {
+    padding: 40px 20px;
+    font-weight: bold;
+    font-family: Avalon, sans-serif;
+    font-size: 35px;
+    text-align: right;
+    color: #000000;
+}

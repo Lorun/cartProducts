@@ -481,28 +481,3 @@ template {
 .text-center {
     text-align: center;
 }
-
-
-.btn {
-    box-sizing: border-box;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
-    margin: 0;
-    white-space: nowrap;
-    -webkit-transition: all 0.25s;
-    transition: all 0.25s;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: none;
-    background: #6d6ff9;
-    height: 2.5em;
-    line-height: 2.5em;
-    padding: 0 1em;
-    color: #ffffff;
-    font-weight: normal;
-    border-radius: 0.25em;
-}

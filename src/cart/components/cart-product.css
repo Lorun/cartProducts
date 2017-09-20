@@ -1,5 +1,66 @@
 
 .cart-product {
+    position: relative;
 	padding: 20px 20px 20px 27px;
 	border-bottom: 1px solid #ececec;
+}
+
+
+.cart-deleteBtn {
+    display: inline-block;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 23px;
+    background: url(../images/icon-trash.svg) 0 0 / 100% auto no-repeat;
+
+    position: absolute;
+    right: 24px;
+    top: 30px;
+
+}
+
+.cart-deleteBtn:hover {
+    opacity: 0.8;
+}
+
+
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    margin: 0;
+    white-space: nowrap;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: none;
+    background: #fff;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.btn--quantity {
+    width: 39px;
+    height: 39px;
+    line-height: 37px;
+    border-radius: 2px;
+    color: #000;
+    border: solid 1px #dcdcdc;
+}
+.btn--quantity:hover {
+    opacity: 0.8;
+}
+.btn--quantity:disabled {
+    opacity: 0.3;
 }

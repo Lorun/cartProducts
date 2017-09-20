@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './cart-product.css';
+// import '../images/icon-trash.svg';
 
 const calculateCheckedQuantity = (currentValue, available, isIncrease) => {
     return isIncrease
@@ -21,7 +22,7 @@ export const CartProduct = ({ item, actions }) => {
 
     return (
         <div className="cart-product">
-            <button onClick={() => actions.deleteCartProduct(id)}>Delete</button>
+            <button onClick={() => actions.deleteCartProduct(id)} className="cart-deleteBtn" title="Delete">&nbsp;</button>
 
             <figure className="product-image" style={styleImage} > </figure>
 
@@ -35,9 +36,9 @@ export const CartProduct = ({ item, actions }) => {
             </div>
 
             <div className="product-quantity">
-                <button className="btn btn--sm" onClick={() => actions.setQuantity(id, decreasedQuantity)} disabled={isDecreaseDisabled}>-</button>
+                <button className="btn btn--quantity" onClick={() => actions.setQuantity(id, decreasedQuantity)} disabled={isDecreaseDisabled}>-</button>
                 <span className="product-quantityValue">{selectedQuantity}</span>
-                <button className="btn btn--sm" onClick={() => actions.setQuantity(id, increasedQuantity)} disabled={isIncreaseDisabled}>+</button>
+                <button className="btn btn--quantity" onClick={() => actions.setQuantity(id, increasedQuantity)} disabled={isIncreaseDisabled}>+</button>
             </div>
 
             <div className="product-price">{price * selectedQuantity}.00 €</div>
